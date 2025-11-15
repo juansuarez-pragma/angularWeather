@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="spinner-container">
       <div class="spinner"></div>
-      <p class="spinner-text">Loading...</p>
+      <p class="spinner-text">Cargando...</p>
     </div>
   `,
   styles: [`

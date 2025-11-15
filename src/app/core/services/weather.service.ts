@@ -58,7 +58,7 @@ export class WeatherService implements IWeatherService {
     return this.http.get<GeocodingResponseDTO>(this.GEOCODING_API_URL, { params }).pipe(
       map(response => {
         if (!response.results || response.results.length === 0) {
-          throw new Error(`City "${cityName}" not found`);
+          throw new Error(`Ciudad "${cityName}" no encontrada`);
         }
         return this.weatherMapper.fromGeocodingDTO(response.results[0]);
       }),
@@ -70,14 +70,14 @@ export class WeatherService implements IWeatherService {
    * Centralized error handling
    */
   private handleError(error: HttpErrorResponse): Observable<never> {
-    let errorMessage = 'An unknown error occurred';
+    let errorMessage = 'Ocurrió un error desconocido';
 
     if (error.error instanceof ErrorEvent) {
-      // Client-side error
+      // Error del cliente
       errorMessage = `Error: ${error.error.message}`;
     } else {
-      // Server-side error
-      errorMessage = `Server Error (${error.status}): ${error.message}`;
+      // Error del servidor
+      errorMessage = `Error del Servidor (${error.status}): ${error.message}`;
     }
 
     console.error('WeatherService Error:', errorMessage);

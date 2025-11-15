@@ -18,7 +18,7 @@ export class LocationService {
   getCurrentLocation(): Observable<Location> {
     return new Observable((observer: Observer<Location>) => {
       if (!navigator.geolocation) {
-        observer.error(new Error('Geolocation is not supported by your browser'));
+        observer.error(new Error('La geolocalización no es compatible con tu navegador'));
         return;
       }
 
@@ -32,17 +32,17 @@ export class LocationService {
           observer.complete();
         },
         (error: GeolocationPositionError) => {
-          let errorMessage = 'Unable to retrieve your location';
+          let errorMessage = 'No se pudo obtener tu ubicación';
 
           switch (error.code) {
             case error.PERMISSION_DENIED:
-              errorMessage = 'Location permission denied. Please enable location access.';
+              errorMessage = 'Permiso de ubicación denegado. Por favor, habilita el acceso a la ubicación.';
               break;
             case error.POSITION_UNAVAILABLE:
-              errorMessage = 'Location information is unavailable.';
+              errorMessage = 'La información de ubicación no está disponible.';
               break;
             case error.TIMEOUT:
-              errorMessage = 'Location request timed out.';
+              errorMessage = 'La solicitud de ubicación ha expirado.';
               break;
           }
 

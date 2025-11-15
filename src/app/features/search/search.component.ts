@@ -19,8 +19,8 @@ import { switchMap } from 'rxjs/operators';
   imports: [CommonModule, ReactiveFormsModule, SharedModule],
   template: `
     <div class="search-container">
-      <h1 class="page-title">Search Weather</h1>
-      <p class="page-subtitle">Find weather for any city</p>
+      <h1 class="page-title">Buscar Clima</h1>
+      <p class="page-subtitle">Encuentra el clima de cualquier ciudad</p>
 
       <!-- Search Form -->
       <form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
@@ -28,12 +28,12 @@ import { switchMap } from 'rxjs/operators';
           <input
             type="text"
             formControlName="cityName"
-            placeholder="Enter city name (e.g., London, Tokyo, New York)"
+            placeholder="Ingresa el nombre de una ciudad (ej: Londres, Tokio, Nueva York)"
             class="search-input"
             [class.error]="isFieldInvalid('cityName')"
           />
           <div class="error-text" *ngIf="isFieldInvalid('cityName')">
-            Please enter a city name
+            Por favor ingresa un nombre de ciudad
           </div>
         </div>
 
@@ -42,7 +42,7 @@ import { switchMap } from 'rxjs/operators';
           class="search-button"
           [disabled]="searchForm.invalid || isLoading()"
         >
-          {{ isLoading() ? '🔍 Searching...' : '🔍 Search' }}
+          {{ isLoading() ? '🔍 Buscando...' : '🔍 Buscar' }}
         </button>
       </form>
 
@@ -52,7 +52,7 @@ import { switchMap } from 'rxjs/operators';
       <!-- Error State -->
       <app-error-message
         *ngIf="loadingState() === 'error'"
-        [title]="'Search Failed'"
+        [title]="'Búsqueda Fallida'"
         [message]="errorMessage()"
       ></app-error-message>
 
@@ -66,7 +66,7 @@ import { switchMap } from 'rxjs/operators';
         ></app-weather-card>
 
         <div class="success-message">
-          ✅ Weather data saved to history
+          ✅ Datos del clima guardados en el historial
         </div>
       </div>
     </div>

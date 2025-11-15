@@ -24,21 +24,21 @@ import { CommonModule } from '@angular/common';
               routerLinkActive="active"
               class="nav-link"
             >
-              📍 Current
+              📍 Actual
             </a>
             <a
               routerLink="/search"
               routerLinkActive="active"
               class="nav-link"
             >
-              🔍 Search
+              🔍 Buscar
             </a>
             <a
               routerLink="/history"
               routerLinkActive="active"
               class="nav-link"
             >
-              📜 History
+              📜 Historial
             </a>
           </nav>
         </div>
@@ -50,8 +50,8 @@ import { CommonModule } from '@angular/common';
 
       <footer class="app-footer">
         <p>
-          Built with Angular {{ angularVersion }} |
-          Data from <a href="https://open-meteo.com" target="_blank">Open-Meteo</a>
+          Construido con Angular {{ angularVersion }} |
+          Datos de <a href="https://open-meteo.com" target="_blank">Open-Meteo</a>
         </p>
       </footer>
     </div>

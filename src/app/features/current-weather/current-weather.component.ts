@@ -18,8 +18,8 @@ import { forkJoin } from 'rxjs';
   imports: [CommonModule, SharedModule],
   template: `
     <div class="current-weather-container">
-      <h1 class="page-title">Current Weather</h1>
-      <p class="page-subtitle">Weather at your current location</p>
+      <h1 class="page-title">Clima Actual</h1>
+      <p class="page-subtitle">Clima en tu ubicación actual</p>
 
       <!-- Loading State -->
       <app-spinner *ngIf="loadingState() === 'loading'"></app-spinner>
@@ -27,7 +27,7 @@ import { forkJoin } from 'rxjs';
       <!-- Error State -->
       <app-error-message
         *ngIf="loadingState() === 'error'"
-        [title]="'Unable to Load Weather'"
+        [title]="'No se pudo cargar el clima'"
         [message]="errorMessage()"
       ></app-error-message>
 
@@ -40,7 +40,7 @@ import { forkJoin } from 'rxjs';
         ></app-weather-card>
 
         <button class="refresh-button" (click)="refreshWeather()">
-          🔄 Refresh Weather
+          🔄 Actualizar Clima
         </button>
       </div>
     </div>

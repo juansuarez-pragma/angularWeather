@@ -23,16 +23,16 @@ import { WeatherMapper } from '@core/mappers/weather.mapper';
         <p class="description">{{ weather.weatherDescription }}</p>
         <div class="details">
           <div class="detail-item">
-            <span class="detail-label">Humidity:</span>
+            <span class="detail-label">Humedad:</span>
             <span class="detail-value">{{ weather.humidity }}%</span>
           </div>
           <div class="detail-item">
-            <span class="detail-label">Wind:</span>
+            <span class="detail-label">Viento:</span>
             <span class="detail-value">{{ weather.windSpeed }} {{ weather.windSpeedUnit }}</span>
           </div>
         </div>
         <p class="timestamp" *ngIf="showTimestamp">
-          Updated: {{ weather.timestamp | date:'short' }}
+          Actualizado: {{ weather.timestamp | date:'short' }}
         </p>
       </div>
       <div class="location-info" *ngIf="cityName">

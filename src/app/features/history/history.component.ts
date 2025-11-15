@@ -14,21 +14,21 @@ import { SearchHistory } from '@models/weather.model';
   imports: [CommonModule, SharedModule],
   template: `
     <div class="history-container">
-      <h1 class="page-title">Search History</h1>
-      <p class="page-subtitle">Your recent weather searches</p>
+      <h1 class="page-title">Historial de Búsquedas</h1>
+      <p class="page-subtitle">Tus búsquedas recientes de clima</p>
 
       <!-- Empty State -->
       <div *ngIf="isEmpty()" class="empty-state">
         <div class="empty-icon">📭</div>
-        <h3>No Search History</h3>
-        <p>Search for a city to see it appear here</p>
+        <h3>Sin Historial de Búsquedas</h3>
+        <p>Busca una ciudad para verla aparecer aquí</p>
       </div>
 
       <!-- History List -->
       <div *ngIf="!isEmpty()" class="history-content">
         <div class="history-actions">
           <button class="clear-button" (click)="clearAllHistory()">
-            🗑️ Clear All History
+            🗑️ Limpiar Todo el Historial
           </button>
         </div>
 
@@ -41,7 +41,7 @@ import { SearchHistory } from '@models/weather.model';
               <button
                 class="delete-button"
                 (click)="deleteItem(item.id)"
-                title="Remove from history"
+                title="Eliminar del historial"
               >
                 ✕
               </button>
@@ -242,7 +242,7 @@ export class HistoryComponent implements OnInit {
    * Clears all history
    */
   clearAllHistory(): void {
-    if (confirm('Are you sure you want to clear all search history?')) {
+    if (confirm('¿Estás seguro de que quieres limpiar todo el historial de búsquedas?')) {
       this.storageService.clearHistory();
       this.historyItems.set([]);
     }
